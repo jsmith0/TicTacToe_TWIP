@@ -26,12 +26,7 @@ public class Main {
         int count = 0;
         outerloop:
         while  (true) {
-
             count++;
-            if (count > 5){
-                System.out.println("It seems to be a draw.");
-                break;
-            }
             System.out.println("Now make your move.");
             String input = kb.next();
             if (input.equals("0")) {
@@ -122,17 +117,38 @@ public class Main {
                 }
                 if (Os == 9 && (i.equals("X")) || a.equals("O")) {
                 }
+
             }
             while(count >=3){
-                System.out.println("Did you win, lose, or neither? Enter \"y\" or \"n\" or \"g\"");
+                System.out.println("Did you win, lose, or neither? Enter \"w\" or \"l\" or \"n\"");
                 String yn = kb.next();
-                if (yn.equalsIgnoreCase("y")){
+                if (yn.equalsIgnoreCase("w")){
+                    System.out.println("CONGRADULATIONS!!!!! You won!");
                     break outerloop;
                 }
-                else if (yn.equalsIgnoreCase("n")){
+                else if (yn.equalsIgnoreCase("l")){
+                    System.out.println("You lost. Would you like to try again? Enter \"y\" or \"n\"");
+                    String qwerty = kb.next();
+                    count = 0;
+                    if (qwerty.equalsIgnoreCase("y")){
+                         a = "1";
+                         b = "2";
+                         c = "3";
+                         d = "4";
+                         e = "5";
+                         f = "6";
+                         g = "7";
+                         h = "8";
+                         i = "9";
+                        System.out.println("\n " + a + " | " + b + " | " + c + "\n---|---|--- \n " + d + " | " + e + " | " + f + "\n---|---|--- \n " + g + " | " + h + " | " + i + "\n");
+                    }
+                    if (qwerty.equalsIgnoreCase("n")){
+                        System.out.println("Then we are done here.");
+                    }
                     break;
                 }
-                else if (yn.equalsIgnoreCase("g")){
+                else if (yn.equalsIgnoreCase("n")){
+                    System.out.println("Then lets keep playing.");
                     break;
                 }
                 else{
